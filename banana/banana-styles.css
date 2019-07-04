@@ -4,22 +4,26 @@
   box-sizing: border-box;
 }
 
+.triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid #555;
+	border-bottom: 25px solid transparent;
+  margin-left: 30px;
+  position: absolute;
+  display: flex;
+}
+
 .page {
   width: 960px;
   padding: 50px 50px;
-  margin: 50px auto;
-  background-color: #cce6ff;     /*light blue*/
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.header {
   margin: 30px auto;
-  width: 100%;
+  border-radius: 2%;
+  background-color: #81e4e4;     /*light blue*/
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .container {
@@ -35,11 +39,10 @@
 .banana-body {
   height: 80%;
   width: 0px;
-  border-top:
-  border-bottom: 30px solid transparent;
+  top: 50px;
+  left: 160px;
   border-right: 180px solid #ecec13;    /* yellow */
   border-radius: 0 150px 150px 0%;
-  /*border: 2px solid #675340;      /* dark outline */
   position: absolute;
   transform: rotate(15deg);
 }
@@ -50,9 +53,8 @@
   top: -20px;
   left: -50px;
   border-top: 30px solid transparent;
-  border-right: 120px solid #cce6ff;
+  border-right: 120px solid #81e4e4;
   border-radius: 0 120px 120px 0%;
-  /*border: 2px solid #675340;      /* dark outline */
   position: absolute;
 }
 
@@ -98,6 +100,7 @@
   height: 35px;
   left: 30px;
   top: 30px;
+  animation: eyes 2s infinite;
 }
 
 .banana-right-eye {
@@ -120,6 +123,7 @@
   height: 35px;
   left: 30px;
   top: 30px;
+  animation: eyes 2s infinite;
 }
 
 .banana-mouth {
@@ -135,10 +139,48 @@
 }
 
 .banana-float {
-  width: 230px;
+  width: 350px;
   height: 10px;
   border-radius: 50%;
   background-color: #868679;
   position: relative;
-  top: 280px;
+  top: 330px;
+  left: -150px;
+}
+
+.banana {
+  height: 500px;
+  width: 500px;
+  top: 80px;
+  position: relative;
+  animation-name: float;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes float {
+  0%, 100% {
+    top: 80px;
+  }
+
+  50% {
+    top: 75px;
+  }
+}
+
+@keyframes eyes {
+
+  0%, 50%, 100% {
+    left: 30px;
+  }
+
+  25% {
+    left: 20px;
+  }
+
+75% {
+  left: 40px;
+}
+
 }
